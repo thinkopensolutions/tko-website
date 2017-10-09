@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="confirmation" inherit_id="website_sale.confirmation">
+        <xpath expr="//tfooter//tr[2]" position="after">
+            <tr>
+                <td class='noborder' colspan="2"></td>
+                <td class="text-right noborder">Frete:</td>
+                <td class="text-right noborder">
+                    <span t-field="order.total_frete" style="white-space: nowrap;"
+                          t-options="{'widget': 'monetary', 'from_currency': order.pricelist_id.currency_id, 'display_currency': website.currency_id}"/>
+                </td>
+            </tr>
+        </xpath>
+
+    </template>
+
+    <template id="total" inherit_id="website_sale.total">
+        <xpath expr="//div[@id='order_total']" position="before">
+            <div class="row" id="order_total_taxes">
+                <span class="col-xs-6 text-right text-muted" title="Taxes may be updated after providing shipping address"> Frete:</span>
+                <span class="col-xs-6 text-left text-muted">
+                    <span t-field="website_sale_order.total_frete" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}" />
+                </span>
+            </div>
+        </xpath>
+    </template>
+</odoo>
