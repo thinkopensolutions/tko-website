@@ -12,6 +12,8 @@
     'website': 'http://www.tkobr.com',
     'depends': [
         'website_sale',
+        'delivery_correios',
+        'tko_br_delivery_sale_stock',
     ],
     'data': [
        'views/website_sale_view.xml',
