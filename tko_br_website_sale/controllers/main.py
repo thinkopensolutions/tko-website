@@ -9,6 +9,7 @@ class CorreiosL10nBrWebsiteSale(main.WebsiteSale):
 
         # FUll name is not passed to cielo if name doesn't have space in it
         if 'name' in data and data['name']:
+            data['name'] = data['name'].strip()
             if len(data['name'].split(" ")) < 2:
                 errors["name"] = u"invalid"
                 error_msg.append(u'Nome deve conter o Primeiro e Último nome')
