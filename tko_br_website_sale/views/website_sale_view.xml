@@ -17,11 +17,25 @@
     <template id="total" inherit_id="website_sale.total">
         <xpath expr="//div[@id='order_total']" position="before">
             <div class="row" id="order_total_taxes">
-                <span class="col-xs-6 text-right text-muted" title="Taxes may be updated after providing shipping address"> Frete:</span>
+                <span class="col-xs-6 text-right text-muted"
+                      title="Taxes may be updated after providing shipping address">Frete:
+                </span>
                 <span class="col-xs-6 text-left text-muted">
-                    <span t-field="website_sale_order.total_frete" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}" />
+                    <span t-field="website_sale_order.total_frete" style="white-space: nowrap;"
+                          t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}"/>
                 </span>
             </div>
+        </xpath>
+    </template>
+    <!-- Add warning on website -->
+    <template id="payment" inherit_id="website_sale.cart">
+        <xpath expr="//h1" position="after">
+            <t t-if="not valid">
+                <div class="alert alert-danger">
+                    <strong>Wraning!</strong>
+                    You can't buy product with freight &amp; no freight together.
+                </div>
+            </t>
         </xpath>
     </template>
 </odoo>
