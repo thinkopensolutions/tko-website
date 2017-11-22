@@ -22,4 +22,4 @@ class SaleConfiguration(models.TransientModel):
 
     @api.multi
     def set_default_sale_freight_warning(self):
-        self.env.user.company_id.issue_eletronic_doc = self.sale_freight_warning
+        self.env.user.company_id.sale_freight_warning = self.sale_freight_warning
