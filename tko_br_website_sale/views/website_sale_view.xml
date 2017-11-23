@@ -43,10 +43,10 @@
     <template id="cart_lines" inherit_id="website_sale.cart_lines">
         <xpath expr="//tbody//a" position="after">
             <t t-if="line.product_id.has_frete">
-                <strong><span style="color:red">With Delivery</span></strong>
+                <span style="color:blue; padding-left:30px">With Delivery</span>
             </t>
             <t t-if="not line.product_id.has_frete">
-                <strong><span style="color:red">Without Delivery</span></strong>
+                <span style="color:blue; padding-left:30px">Without Delivery</span>
             </t>
         </xpath>
     </template>
