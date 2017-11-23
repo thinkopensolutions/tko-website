@@ -1,0 +1,96 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tko_br_website_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-23 12:17+0000\n"
+"PO-Revision-Date: 2017-11-23 12:17+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tko_br_website_sale
+#: model:ir.ui.view,arch_db:tko_br_website_sale.total
+msgid "<span class=\"col-xs-6 text-right text-muted\" title=\"Taxes may be updated after providing shipping address\">Frete:\n"
+"                </span>"
+msgstr "<span class=\"col-xs-6 text-right text-muted\" title=\"Taxes may be updated after providing shipping address\">Frete:\n"
+"                </span>"
+
+#. module: tko_br_website_sale
+#: model:ir.ui.view,arch_db:tko_br_website_sale.cart_lines
+msgid "<span style=\"color:blue; padding-left:30px\">With Delivery</span>"
+msgstr "<span style=\"color:blue; padding-left:30px\">Frete</span>"
+
+#. module: tko_br_website_sale
+#: model:ir.ui.view,arch_db:tko_br_website_sale.cart_lines
+msgid "<span style=\"color:blue; padding-left:30px\">Without Delivery</span>"
+msgstr "<span style=\"color:blue; padding-left:30px\">Sem Frete</span>"
+
+#. module: tko_br_website_sale
+#: model:ir.ui.view,arch_db:tko_br_website_sale.payment
+msgid "<strong>Wraning!</strong>\n"
+"                    You can't buy product with freight &amp; no freight together."
+msgstr "<strong>Atenção!</strong>\n"
+"                    Você não pode colocar no carrinho, produtos com frete e sem frete."
+
+#. module: tko_br_website_sale
+#: model:ir.model,name:tko_br_website_sale.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: tko_br_website_sale
+#: model:ir.model.fields,field_description:tko_br_website_sale.field_res_company_sale_freight_warning
+#: model:ir.model.fields,field_description:tko_br_website_sale.field_sale_config_settings_sale_freight_warning
+msgid "Freight Warning"
+msgstr "Freight Warning"
+
+#. module: tko_br_website_sale
+#: model:ir.ui.view,arch_db:tko_br_website_sale.confirmation
+msgid "Frete:"
+msgstr "Frete:"
+
+#. module: tko_br_website_sale
+#: selection:sale.config.settings,sale_freight_warning:0
+msgid "Sale all type of products"
+msgstr "Sale all type of products"
+
+#. module: tko_br_website_sale
+#: selection:res.company,sale_freight_warning:0
+msgid "Sale all type of products together"
+msgstr "Sale all type of products together"
+
+#. module: tko_br_website_sale
+#: selection:res.company,sale_freight_warning:0
+#: selection:sale.config.settings,sale_freight_warning:0
+msgid "Sale with and without freight separately"
+msgstr "Sale with and without freight separately"
+
+#. module: tko_br_website_sale
+#: model:ir.model.fields,help:tko_br_website_sale.field_sale_config_settings_sale_freight_warning
+msgid "Sale with and without freight separately: You can either buy with or without delivery charges products in one time.\n"
+"Sale all type of products together: you can buy with and without delivery charges products together\n"
+""
+msgstr "Sale with and without freight separately: You can either buy with or without delivery charges products in one time.\n"
+"Sale all type of products together: you can buy with and without delivery charges products together\n"
+""
+
+#. module: tko_br_website_sale
+#: model:ir.model.fields,help:tko_br_website_sale.field_res_company_sale_freight_warning
+msgid "Sale with and without freight separately: You can either buy with or without delivery charges products in one time.\n"
+"Sale all type of products: you can buy with and without delivery charges products together\n"
+""
+msgstr "Sale with and without freight separately: You can either buy with or without delivery charges products in one time.\n"
+"Sale all type of products: you can buy with and without delivery charges products together\n"
+""
+
+#. module: tko_br_website_sale
+#: model:ir.model,name:tko_br_website_sale.model_sale_config_settings
+msgid "sale.config.settings"
+msgstr "sale.config.settings"
+

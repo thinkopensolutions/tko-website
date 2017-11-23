@@ -16,7 +16,8 @@
         'tko_br_delivery_sale_stock',
     ],
     'data': [
-       'views/website_sale_view.xml',
+        'views/website_sale_view.xml',
+        'views/sale_config_settings_views.xml',
     ],
     'init': [],
     'demo': [],
