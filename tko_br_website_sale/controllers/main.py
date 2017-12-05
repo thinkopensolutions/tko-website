@@ -21,8 +21,6 @@ class CorreiosL10nBrWebsiteSale(main.WebsiteSale):
             if phone_length < 10 or phone_length > 11:
                 errors["phone"] = u"invalid"
                 error_msg.append(u'Telefone deve conter no mínimo 10 e no máximo 11 caracteres')
-        errors["phone"] = u"invalid"
-        error_msg.append(u'Telefone deve conter no mínimo 10 e no máximo 11 caracteres')
         return errors, error_msg
 
     # Set Valid/invalid flag to show/hide warning
