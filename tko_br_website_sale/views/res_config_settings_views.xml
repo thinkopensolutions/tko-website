@@ -3,23 +3,21 @@
     <record id="res_config_settings_view_form_sale" model="ir.ui.view">
         <field name="name">Sale Config</field>
         <field name="model">res.config.settings</field>
-        <field name="inherit_id" ref="sale_stock.res_config_settings_view_form_sale"/>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <field name="group_route_so_lines" position="after">
-                <div class="col-xs-12 col-md-6 o_setting_box" title="This default value is applied to any new product created. This can be changed in the product detail form.">
-                            <div class="o_setting_right_pane">
-                                <label for="default_invoice_policy"/>
-                                <div class="text-muted">
-                                    Quantities to invoice from sales orders
-                                </div>
-                                <div class="content-group">
-                                    <div class="mt16">
-                                        <field name="sale_freight_warning" class="o_light_label" widget="radio"/>
-                                    </div>
-                                </div>
+            <xpath expr="//div[@id='delivery']" position="inside">
+                <div class="col-xs-12 col-md-12 o_setting_box"
+                     title="This default value is applied to any new product created. This can be changed in the product detail form.">
+                    <div class="o_setting_right_pane">
+                        <label for="sale_freight_warning"/>
+                        <div class="content-group">
+                            <div class="mt16">
+                                <field name="sale_freight_warning" class="o_light_label" widget="radio"/>
                             </div>
                         </div>
-            </field>
+                    </div>
+                </div>
+            </xpath>
         </field>
     </record>
 </odoo>
