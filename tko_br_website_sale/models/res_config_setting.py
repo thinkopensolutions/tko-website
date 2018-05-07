@@ -10,7 +10,7 @@ class ResConfigSettings(models.TransientModel):
         ('t', 'Sale all type of products'),
     ], string='Freight Warning',
         required=True,
-        default='together',
+        default='s',
         help='Sale with and without freight separately: You can either buy with or without delivery charges products in one time.\n'
              'Sale all type of products together: you can buy with and without delivery charges products together\n'
     )
