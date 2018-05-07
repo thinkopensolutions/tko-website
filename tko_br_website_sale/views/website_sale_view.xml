@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="confirmation" inherit_id="website_sale.confirmation">
+        <xpath expr="//table[2]//tr[2]" position="after">
+            <tr>
+                <td class='noborder'></td>
+                <td class="text-right noborder">Frete:</td>
+                <td class="text-right-not-xs text-left-xs noborder">
+                    <span t-field="order.total_frete" style="white-space: nowrap;"
+                          t-options="{'widget': 'monetary', 'from_currency': order.pricelist_id.currency_id, 'display_currency': website.currency_id}"/>
+                </td>
+            </tr>
+        </xpath>
+
+    </template>
+
+    <template id="total" inherit_id="website_sale.total">
+        <xpath expr="//div[@id='order_total']" position="before">
+            <div class="row" id="order_total_frete">
+                <span class="col-xs-6 text-right text-muted">Frete:</span>
+                <span class="col-xs-6 text-right-not-xs text-left-xs text-muted">
+                    <span t-field="website_sale_order.total_frete" style="white-space: nowrap;" t-options="{'widget': 'monetary','from_currency': website_sale_order.pricelist_id.currency_id,'display_currency': website.currency_id}" />
+                </span>
+            </div>
+        </xpath>
+    </template>
+    <!-- Add warning on website -->
+    <template id="payment" inherit_id="website_sale.cart">
+        <xpath expr="//h2" position="after">
+            <t t-if="not valid">
+                <div class="alert alert-danger">
+                    <strong>Wraning!</strong>
+                    You can't buy product with freight &amp; no freight together.
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add Frete/ Sem Frete -->
+    <template id="cart_lines" inherit_id="website_sale.cart_lines">
+        <xpath expr="//tbody//a" position="after">
+            <t t-if="line.product_id.has_frete">
+                <span style="color:blue; padding-left:30px">With Delivery</span>
+            </t>
+            <t t-if="not line.product_id.has_frete">
+                <span style="color:blue; padding-left:30px">Without Delivery</span>
+            </t>
+        </xpath>
+    </template>
+</odoo>
