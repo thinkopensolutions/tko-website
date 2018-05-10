@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Delivery">
+      <xpath expr="." position="inside">
+        <script type="text/javascript" src="/tko_br_website_sale/static/src/js/website_sale_delivery.js"></script>
+      </xpath>
+    </template>
+</odoo>
+
