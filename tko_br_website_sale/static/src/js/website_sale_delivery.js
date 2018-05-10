@@ -4,7 +4,7 @@ odoo.define('tko_br_website_sale.checkout', function (require) {
     require('web.dom_ready');
     var ajax = require('web.ajax');
 
-    /* Handle interactive carrier choice + cart update */
+    /* This file only updates the  $amount_frete, there is no way to inherit the mehod so we have to dupilcate some code*/
     var $pay_button = $('#o_payment_form_pay');
 
     var _onCarrierUpdateAnswer = function(result) {
@@ -19,7 +19,6 @@ odoo.define('tko_br_website_sale.checkout', function (require) {
         var $amount_frete = $('#order_total_frete span.oe_currency_value');
         if (result.status === true) {
             $amount_delivery.text(result.new_amount_delivery);
-            console.log("deliverystandard local...........",$amount_delivery);
             $amount_untaxed.text(result.new_amount_untaxed);
             $amount_frete.text(result.new_amount_delivery);
             $amount_tax.text(result.new_amount_tax);
