@@ -13,9 +13,11 @@
     'depends': [
         'website_sale',
         'delivery_correios',
+        'website_sale_delivery',
         'tko_br_delivery_sale_stock',
     ],
     'data': [
+        'static/src/xml/website_sale_view.xml',
         'views/website_sale_view.xml',
         'views/res_config_settings_views.xml',
     ],
