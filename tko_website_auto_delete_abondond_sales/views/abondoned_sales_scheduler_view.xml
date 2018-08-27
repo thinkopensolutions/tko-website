@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="autovacuum_abondoned_website_sales" model="ir.cron">
+        <field name="name">Base: Auto-vacuum Abondened Website Sales</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">model.auto_vaccume_abonded_sales()</field>
+        <field name='interval_number'>1</field>
+        <field name='interval_type'>hours</field>
+        <field name="numbercall">-1</field>
+    </record>
+</odoo>
