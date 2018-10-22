@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tko_br_website_sale_coupon
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-22 13:53+0000\n"
+"PO-Revision-Date: 2018-10-22 13:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tko_br_website_sale_coupon
+#: model:ir.ui.view,arch_db:tko_br_website_sale_coupon.cart_lines_extended
+msgid "<small>\n"
+"                                            <i class=\"fa fa-trash-o\"/>\n"
+"                                            Remove\n"
+"                                        </small>"
+msgstr "<small>\n"
+"                                            <i class=\"fa fa-trash-o\"/>\n"
+"                                            Remove\n"
+"                                        </small>"
+
+#. module: tko_br_website_sale_coupon
+#: model:ir.ui.view,arch_db:tko_br_website_sale_coupon.cart_lines_extended
+msgid "<span style=\"color:blue; padding-left:30px\">With Delivery</span>"
+msgstr "<span style=\"color:blue; padding-left:30px\">Produto com Frete</span>"
+
+#. module: tko_br_website_sale_coupon
+#: model:ir.ui.view,arch_db:tko_br_website_sale_coupon.cart_lines_extended
+msgid "<span style=\"color:blue; padding-left:30px\">Without Delivery</span>"
+msgstr "<span style=\"color:blue; padding-left:30px\">Produto sem Frete</span>"
+
+#. module: tko_br_website_sale_coupon
+#: model:ir.ui.view,arch_db:tko_br_website_sale_coupon.cart_lines_extended
+msgid "Price"
+msgstr "Preço"
+
+#. module: tko_br_website_sale_coupon
+#: model:ir.ui.view,arch_db:tko_br_website_sale_coupon.cart_lines_extended
+msgid "Product"
+msgstr "Produto"
+
+#. module: tko_br_website_sale_coupon
+#: model:ir.ui.view,arch_db:tko_br_website_sale_coupon.cart_lines_extended
+msgid "Quantity"
+msgstr "Quantidade"
