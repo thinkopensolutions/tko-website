@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import odoo.addons.website_coupon.controllers.main as main
+import odoo.addons.tko_br_website_sale.controllers.main as smain
 from odoo import http, tools, _
 from odoo.http import request
 
@@ -47,4 +48,21 @@ class BrWebsiteSaleCoupon(main.WebsiteCoupon):
             values['coupon_not_available'] = post.get('coupon_not_available')
 
         return request.render("website_sale.cart", values)
+
+
+class BrWebsiteSaleCouponCheckout(smain.CorreiosL10nBrWebsiteSale):
+
+    # fallback to "/shop/cart" if order not valid
+    # Don't fallback just because website coupon, this is not to be considered
+    @http.route(['/shop/checkout'], type='http', auth="public", website=True)
+    def checkout(self, **post):
+        order = request.website.sale_get_order()
+        ICPSudo = request.env['ir.config_parameter'].sudo()
+        coupon_product = request.env.ref("website_coupon.discount_product")
+        if ICPSudo.get_param('tko_br_website_sale.sale_freight_warning') == 's' and len(
+                set([line.product_id.has_frete for line in order.order_line if line.product_id and line.product_id != coupon_product])) > 1:
+            return request.redirect("/shop/cart")
+        else:
+            return super(smain.CorreiosL10nBrWebsiteSale, self).checkout(**post)
+
 
