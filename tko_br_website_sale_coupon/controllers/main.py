@@ -20,8 +20,9 @@ class BrWebsiteSaleCoupon(main.WebsiteCoupon):
         else:
             compute_currency = lambda price: price
         valid = True
+        coupon_product = request.env.ref("website_coupon.discount_product")
         if ICPSudo.get_param('tko_br_website_sale.sale_freight_warning') == 's' and len(
-                set([line.product_id.has_frete for line in order.order_line if line.product_id])) > 1:
+                set([line.product_id.has_frete for line in order.order_line if line.product_id and line.product_id != coupon_product])) > 1:
             valid = False
 
         values = {
