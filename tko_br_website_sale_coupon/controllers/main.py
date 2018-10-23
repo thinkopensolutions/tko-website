@@ -48,3 +48,16 @@ class BrWebsiteSaleCoupon(main.WebsiteCoupon):
 
         return request.render("website_sale.cart", values)
 
+        # fallback to "/shop/cart" if order not valid
+        @http.route(['/shop/checkout'], type='http', auth="public", website=True)
+        def checkout(self, **post):
+            order = request.website.sale_get_order()
+            ICPSudo = request.env['ir.config_parameter'].sudo()
+            coupon_product = request.env.ref("website_coupon.discount_product")
+            if ICPSudo.get_param('tko_br_website_sale.sale_freight_warning') == 's' and len(
+                    set([line.product_id.has_frete for line in order.order_line if line.product_id and line.product_id != coupon_product])) > 1:
+                return request.redirect("/shop/cart")
+            else:
+                return super(BrWebsiteSaleCoupon, self).checkout(**post)
+
+
